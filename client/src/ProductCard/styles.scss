@@ -1,0 +1,22 @@
+.product {
+    cursor: pointer;
+    .content {
+        height: 150px;
+    }
+
+    .description {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .image {
+        height: 230px;
+        object-fit: contain;
+    }
+
+    .text{
+        font-size: 13px;
+        color: #666;
+    }
+}
