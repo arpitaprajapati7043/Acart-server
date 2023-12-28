@@ -19,7 +19,7 @@ app.use(cors({
   credentials: true
 }));
 
-app.use(
+aapp.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
     directives: {
@@ -27,7 +27,7 @@ app.use(
       scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://apis.google.com'],
       styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
       'unsafe-hashes': [], // Add hashes of inline scripts here
-      imgSrc: ["'self'", 'https://acart-server.onrender.com'], // Add the correct source for images
+      imgSrc: ["'self'", 'https://acart-server.onrender.com', 'data:'], // Add the correct source for images
       // Add other directives as needed
     },
   })
