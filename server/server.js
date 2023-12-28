@@ -11,10 +11,15 @@ const cartRouter = require('./routes/cartRouter');
 const requestLogger = require('./utils/requestLogger');
 const errorHandler = require('./utils/errorHandler');
 
+
+
+const allowedOrigins = ['http://localhost:3000', 'https://acart-server.onrender.com'];
+
+
 app.use(cors({
-  origin: 'https://acart-server.onrender.com/',
+  origin: allowedOrigins,
   credentials: true
-}))
+}));
 
 // app.use(cors((req, res, next) => {
 //   res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
