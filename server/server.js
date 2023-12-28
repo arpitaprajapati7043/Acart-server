@@ -19,7 +19,7 @@ app.use(cors({
   credentials: true
 }));
 
-aapp.use(
+app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,
     directives: {
