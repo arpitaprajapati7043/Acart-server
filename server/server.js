@@ -19,15 +19,20 @@ app.use(cors({
   credentials: true
 }));
 
-app.use(helmet.contentSecurityPolicy({
-  useDefaults: true,
-  directives: {
-    defaultSrc: ["'self'"],
-    scriptSrc: ["'self'", 'https://apis.google.com'],
-    styleSrc: ["'self'", 'https://fonts.googleapis.com'], // Add other style sources
-    // Add other directives as needed
-  },
-}));
+app.use(
+  helmet.contentSecurityPolicy({
+    useDefaults: true,
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://apis.google.com'],
+      styleSrc: ["'self'", "'unsafe-inline'", 'https://fonts.googleapis.com'],
+      'unsafe-hashes': [], // Add hashes of inline scripts here
+      imgSrc: ["'self'", 'https://acart-server.onrender.com'], // Add the correct source for images
+      // Add other directives as needed
+    },
+  })
+);
+
 
 app.use(express.json());
 app.use(cookieParser());
