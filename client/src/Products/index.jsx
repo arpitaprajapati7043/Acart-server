@@ -9,7 +9,7 @@ import ProductFilter from '../ProductFilter';
 import Sort from '../Sort';
 
 function Products() {
-    const url = 'https://fakestoreapi.com/products';
+    const url = 'https://api-cartserver.onrender.com/Products';
     const [products, setProducts] = useState([]);
     const [filters, setFilters] = useState([]);
     const [searchParams] = useSearchParams();
