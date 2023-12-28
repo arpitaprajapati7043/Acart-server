@@ -1,4 +1,5 @@
 const express = require('express');
+const helmet = require('helmet');
 const  dotenv=require("dotenv");
 dotenv.config();
 const app = express();
@@ -39,6 +40,15 @@ app.use(cors({
 
 
 // Specify middleware
+app.use(helmet.contentSecurityPolicy({
+  useDefaults: true,
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'", "'unsafe-inline'", "'unsafe-eval'", 'https://apis.google.com'],
+    // Add other directives as needed
+  },
+}));
+
 app.use(express.json());
 app.use(cookieParser());
 
