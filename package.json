@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/server.js",
-    "build": "npm run build-client && npm run build-server",
+    "start": "node server/server.js", 
+    "build": "npm run build-client && npm run build-server", 
     "build-client": "cd client && npm install && npm run build", 
     "build-server": "cd server && npm install", 
-    "deploy": "npm run build && render deploy" 
+    "deploy": "npm run build && render deploy", 
+    "render-start": "node server/server.js"
   },
   "author": "",
   "license": "ISC"
