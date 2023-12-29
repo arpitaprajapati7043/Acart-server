@@ -5,12 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install-server": "cd server && npm install",
-    "start-server": "cd server && node server.js",
-    "install-client": "cd client && npm install",
-    "build-client": "cd client && npm run build",
-    "start-client": "cd client && npm run start"
-
+    "start": "node server/server.js",
+    "build": "npm run build-client && npm run build-server",
+    "build-client": "cd client && npm install && npm run build", 
+    "build-server": "cd server && npm install", 
+    "deploy": "npm run build && render deploy" 
   },
   "author": "",
   "license": "ISC"
